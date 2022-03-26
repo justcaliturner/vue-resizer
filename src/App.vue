@@ -234,11 +234,11 @@ export default {
   },
   data() {
     return {
-      example: `import DragerCol from "vue-slider";
-import DragerRow from "vue-slider";
-import ResizeCol from "vue-slider";
-import ResizeRow from "vue-slider";
-import Resize from "vue-slider";
+      example: `import DragerCol from "vue-resizer";
+import DragerRow from "vue-resizer";
+import ResizeCol from "vue-resizer";
+import ResizeRow from "vue-resizer";
+import Resize from "vue-resizer";
 `,
       example_1: `<!-- Usage -->
 <DragerCol>
@@ -479,7 +479,7 @@ props: {
     </template>
   </DragerRow>
 </Resize>`,
-      install: `npm install vue-slider`,
+      install: `npm install vue-resizer`,
       // show datd
       data_1: "50%",
       data_1_1: "50%",
