@@ -3,6 +3,7 @@ A series of the resizer components for Vue.js
 
 ### [For all the usages please check the website](https://vue-resizer.vicuxd.com/) 
 
+
 Install with NPM
 
 ```
@@ -23,7 +24,6 @@ import {
 Usage
 
 ```html
-<!--  -->
 <DragerCol>
   <template #left>
     <!-- your content -->
