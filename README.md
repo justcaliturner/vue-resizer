@@ -1,7 +1,7 @@
 # vue-resizer
 A series of the resizer components for Vue.js
 
-[For all the usages please check the website](https://vue-resizer.vicuxd.com/) 
+### [For all the usages please check the website](https://vue-resizer.vicuxd.com/) 
 
 Install with NPM
 
@@ -9,7 +9,7 @@ Install with NPM
 npm install vue-resizer
 ```
 
-Example
+Import
 
 ```js
 import {
@@ -20,9 +20,10 @@ import {
   Resize,
 } from "vue-resizer"
 ```
+Usage
 
 ```html
-<!-- Usage -->
+<!--  -->
 <DragerCol>
   <template #left>
     <!-- your content -->
@@ -33,8 +34,8 @@ import {
 </DragerCol>
 ```
 
+Props
 ```js
-// Props
 props: {
   // width percentage of the left part
   // units: %
@@ -77,3 +78,5 @@ props: {
   }
 }
 ```
+
+### [Go to the document](https://vue-resizer.vicuxd.com/) 
