@@ -85,7 +85,7 @@ export default {
         e.stopPropagation();
         newPos = e.changedTouches[0].clientY;
         const movingDistance = oldPos - newPos;
-        newHeight = oldHeight - movingDistance;
+        newHeight = parseInt(oldHeight - movingDistance);
         if (newHeight <= 20) {
           vue.reHeight = 20;
         } else {
@@ -123,7 +123,7 @@ export default {
         e.stopPropagation();
         newPos = e.clientY;
         const movingDistance = oldPos - newPos;
-        newHeight = oldHeight - movingDistance;
+        newHeight = parseInt(oldHeight - movingDistance);
         if (newHeight <= 20) {
           vue.reHeight = 20;
         } else {
@@ -157,7 +157,7 @@ export default {
         e.stopPropagation();
         newPos = e.changedTouches[0].clientX;
         const movingDistance = oldPos - newPos;
-        newWidth = oldWidth - movingDistance;
+        newWidth = parseInt(oldWidth - movingDistance);
         if (newWidth <= 20) {
           vue.reWidth = 20;
         } else {
@@ -193,7 +193,7 @@ export default {
         e.stopPropagation();
         newPos = e.clientX;
         const movingDistance = oldPos - newPos;
-        newWidth = oldWidth - movingDistance;
+        newWidth = parseInt(oldWidth - movingDistance);
         if (newWidth <= 20) {
           vue.reWidth = 20;
         } else {
