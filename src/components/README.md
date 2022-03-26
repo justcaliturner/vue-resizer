@@ -18,7 +18,7 @@ import {
   ResizeCol,
   ResizeRow,
   Resize,
-} from "./components/index.js"
+} from "vue-resizer"
 ```
 
 ```html

@@ -1,6 +1,6 @@
 {
   "name": "vue-resizer",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A series of the resizer components for Vue.js",
   "main": "index.js",
   "scripts": {
