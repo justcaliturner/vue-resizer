@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Vue Slider</h1>
-    <p>A series of the slider components for Vue.js</p>
+    <p>A series of the resizer components for Vue.js</p>
     <CodeEditor
       width="100%"
       :value="install"

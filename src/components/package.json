@@ -1,0 +1,25 @@
+{
+  "name": "vue-resizer",
+  "version": "1.0.0",
+  "description": "A series of the resizer components for Vue.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justcaliturner/vue-resizer.git"
+  },
+  "keywords": [
+    "vue-resizer",
+    "resizer",
+    "resize",
+    "slider",
+    "vue"
+  ],
+  "author": "Vic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justcaliturner/vue-resizer/issues"
+  },
+  "homepage": "https://vue-resizer.vicuxd.com"
+}
