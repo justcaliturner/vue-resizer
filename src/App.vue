@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Vue Slider</h1>
+    <h1>Vue Resizer</h1>
     <p>A series of the resizer components for Vue.js</p>
     <CodeEditor
       width="100%"
@@ -217,11 +217,13 @@
 <script>
 import hljs from "highlight.js";
 import CodeEditor from "simple-code-editor";
-import DragerCol from "./components/DragerCol.vue";
-import DragerRow from "./components/DragerRow.vue";
-import ResizeCol from "./components/ResizeCol.vue";
-import ResizeRow from "./components/ResizeRow.vue";
-import Resize from "./components/Resize.vue";
+import {
+  DragerCol,
+  DragerRow,
+  ResizeCol,
+  ResizeRow,
+  Resize,
+} from "./components/index.js";
 
 export default {
   components: {
@@ -234,12 +236,13 @@ export default {
   },
   data() {
     return {
-      example: `import DragerCol from "vue-resizer";
-import DragerRow from "vue-resizer";
-import ResizeCol from "vue-resizer";
-import ResizeRow from "vue-resizer";
-import Resize from "vue-resizer";
-`,
+      example: `import {
+  DragerCol,
+  DragerRow,
+  ResizeCol,
+  ResizeRow,
+  Resize,
+} from "vue-resizer";`,
       example_1: `<!-- Usage -->
 <DragerCol>
   <template #left>

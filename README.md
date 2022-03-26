@@ -3,18 +3,22 @@ A series of the resizer components for Vue.js
 
 [For all the usages please check the website](https://vue-resizer.vicuxd.com/) 
 
-Example:
+Install with NPM
 
 ```
 npm install vue-resizer
 ```
 
+Example
+
 ```js
-import DragerCol from "vue-resizer";
-import DragerRow from "vue-resizer";
-import ResizeCol from "vue-resizer";
-import ResizeRow from "vue-resizer";
-import Resize from "vue-resizer";
+import {
+  DragerCol,
+  DragerRow,
+  ResizeCol,
+  ResizeRow,
+  Resize,
+} from "./components/index.js"
 ```
 
 ```html
