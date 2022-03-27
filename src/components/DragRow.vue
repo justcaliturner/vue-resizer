@@ -1,36 +1,36 @@
 <template>
   <div
-    class="drager_col"
+    class="drager_row"
     ref="container"
     :style="{ width: width, height: height }"
   >
-    <div class="drager_left" :style="{ width: left + '%' }">
+    <div class="drager_top" :style="{ height: top + '%' }">
       <div>
-        <slot name="left"></slot>
+        <slot name="top"></slot>
       </div>
     </div>
     <div
-      class="slider_col"
-      @touchstart.passive="mobileDragCol"
-      @mousedown="dragCol"
+      class="slider_row"
+      @touchstart.passive="mobileDragRow"
+      @mousedown="dragRow"
       :style="{
-        width: sliderWidth + 'px',
-        marginLeft: -sliderWidth / 2 + 'px',
-        marginRight: -sliderWidth / 2 + 'px',
+        height: sliderWidth + 'px',
+        marginTop: -sliderWidth / 2 + 'px',
+        marginBottom: -sliderWidth / 2 + 'px',
       }"
     ></div>
-    <div class="drager_right" :style="{ width: 100 - left + '%' }">
+    <div class="drager_bottom" :style="{ height: 100 - top + '%' }">
       <div>
-        <slot name="right"></slot>
+        <slot name="bottom"></slot>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "DragerCol",
+  name: "DragRow",
   props: {
-    leftPercent: {
+    topPercent: {
       type: Number,
       default: 50,
     },
@@ -61,19 +61,21 @@ export default {
   },
   data() {
     return {
-      left: this.leftPercent,
+      top: this.topPercent,
       isDragging: false,
     };
   },
   methods: {
-    mobileDragCol(e) {
+    mobileDragRow(e) {
+      document.body.style.overflow = "hidden";
+      document.body.style.overscrollBehaviorY = "contain";
       e = e || window.event;
       e.stopPropagation();
-      let oldPos = e.changedTouches[0].clientX;
-      let oldPosPercent = this.left;
+      let oldPos = e.changedTouches[0].clientY;
+      let oldPosPercent = this.top;
       let newPos = 0;
       let newPosPercent = 0;
-      const containerWidth = this.$refs.container.offsetWidth;
+      const containerHeight = this.$refs.container.offsetHeight;
       const vue = this;
       this.isDragging = true;
       this.$emit("isDragging", this.isDragging);
@@ -84,36 +86,38 @@ export default {
         this.time = Date.now();
         e = e || window.event;
         e.stopPropagation();
-        newPos = e.changedTouches[0].clientX;
+        newPos = e.changedTouches[0].clientY;
         const movingDistancePercent = parseFloat(
-          (((oldPos - newPos) / containerWidth) * 100).toFixed(3)
+          (((oldPos - newPos) / containerHeight) * 100).toFixed(3)
         );
         newPosPercent = oldPosPercent - movingDistancePercent;
         if (newPosPercent <= 0) {
-          vue.left = 0;
+          vue.top = 0;
         } else if (newPosPercent >= 100) {
-          vue.left = 100;
+          vue.top = 100;
         } else {
-          vue.left = newPosPercent;
+          vue.top = newPosPercent;
         }
-        vue.$emit("dragging", vue.left);
+        vue.$emit("dragging", vue.top);
       }
       function cancelSliderDrag() {
         vue.isDragging = false;
         vue.$emit("isDragging", vue.isDragging);
+        document.body.style.overflow = "";
+        document.body.style.overscrollBehaviorY = "";
         document.ontouchmove = null;
         document.ontouchend = null;
       }
     },
-    dragCol(e) {
+    dragRow(e) {
       e = e || window.event;
       e.preventDefault();
       e.stopPropagation();
-      let oldPos = e.clientX;
-      let oldPosPercent = this.left;
+      let oldPos = e.clientY;
+      let oldPosPercent = this.top;
       let newPos = 0;
       let newPosPercent = 0;
-      const containerWidth = this.$refs.container.offsetWidth;
+      const containerHeight = this.$refs.container.offsetHeight;
       const vue = this;
       this.isDragging = true;
       this.$emit("isDragging", this.isDragging);
@@ -123,21 +127,20 @@ export default {
         if (this.time && Date.now() - this.time < 40) return;
         this.time = Date.now();
         e = e || window.event;
-        e.preventDefault();
         e.stopPropagation();
-        newPos = e.clientX;
+        newPos = e.clientY;
         const movingDistancePercent = parseFloat(
-          (((oldPos - newPos) / containerWidth) * 100).toFixed(3)
+          (((oldPos - newPos) / containerHeight) * 100).toFixed(3)
         );
         newPosPercent = oldPosPercent - movingDistancePercent;
         if (newPosPercent <= 0) {
-          vue.left = 0;
+          vue.top = 0;
         } else if (newPosPercent >= 100) {
-          vue.left = 100;
+          vue.top = 100;
         } else {
-          vue.left = newPosPercent;
+          vue.top = newPosPercent;
         }
-        vue.$emit("dragging", vue.left);
+        vue.$emit("dragging", vue.top);
       }
       function cancelSliderDrag() {
         vue.isDragging = false;
@@ -150,69 +153,70 @@ export default {
 };
 </script>
 <style>
-.drager_col {
+.drager_row {
   overflow: hidden;
+  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+}
+.drager_row * {
   box-sizing: border-box;
 }
-.drager_col * {
-  box-sizing: border-box;
+.drager_row > div {
+  width: 100%;
 }
-.drager_col > div {
-  height: 100%;
-}
-.drager_left {
+.drager_top {
   background: #2d4252;
-  padding-right: 10px;
+  padding-bottom: 10px;
 }
-.drager_left > div {
+.drager_top > div {
   height: 100%;
   overflow: hidden;
 }
-.drager_right {
+.drager_bottom {
   background: #4d6170;
-  padding-left: 10px;
+  padding-top: 10px;
 }
-.drager_right > div {
+.drager_bottom > div {
   height: 100%;
   overflow: hidden;
 }
-.drager_col > .slider_col {
+.drager_row > .slider_row {
   position: relative;
   z-index: 1;
-  cursor: col-resize;
+  cursor: row-resize;
   background: v-bind("sliderBgColor");
 }
-.drager_col > .slider_col:before {
+.drager_row > .slider_row:before {
   transition: background-color 0.2s;
   position: absolute;
-  top: 50%;
-  left: 31%;
-  transform: translateY(-50%);
+  left: 50%;
+  top: 31%;
+  transform: translateX(-50%);
   content: "";
   display: block;
-  width: 1px;
-  height: 24%;
-  min-height: 30px;
-  max-height: 70px;
+  height: 1px;
+  width: 24%;
+  min-width: 30px;
+  max-width: 70px;
   background-color: v-bind("sliderColor");
 }
-.drager_col > .slider_col:after {
+.drager_row > .slider_row:after {
   transition: background-color 0.2s;
   position: absolute;
-  top: 50%;
-  right: 31%;
-  transform: translateY(-50%);
+  left: 50%;
+  bottom: 31%;
+  transform: translateX(-50%);
   content: "";
   display: block;
-  width: 1px;
-  height: 24%;
-  min-height: 30px;
-  max-height: 70px;
+  height: 1px;
+  width: 24%;
+  min-width: 30px;
+  max-width: 70px;
   background-color: v-bind("sliderColor");
 }
-.drager_col > .slider_col:hover,
-.drager_col > .slider_col:active {
+.drager_row > .slider_row:hover,
+.drager_row > .slider_row:active {
   background: v-bind("sliderBgHoverColor");
 }
 </style>

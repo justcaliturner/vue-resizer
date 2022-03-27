@@ -15,8 +15,8 @@ Import
 
 ```js
 import {
-  DragerCol,
-  DragerRow,
+  DragCol,
+  DragRow,
   ResizeCol,
   ResizeRow,
   Resize,
@@ -25,14 +25,14 @@ import {
 Usage
 
 ```html
-<DragerCol>
+<DragCol>
   <template #left>
     <!-- your content -->
   </template>
   <template #right>
     <!-- your content -->
   </template>
-</DragerCol>
+</DragCol>
 ```
 
 Props

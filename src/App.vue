@@ -67,8 +67,8 @@
       </svg>
     </a>
     <h2>Examples</h2>
-    <!-- DragerCol -->
-    <DragerCol
+    <!-- DragCol -->
+    <DragCol
       class="example_1"
       @isDragging="isDragging"
       @dragging="draggingCol"
@@ -82,7 +82,7 @@
         <!-- your content -->
         {{ data_1_1 }}
       </template>
-    </DragerCol>
+    </DragCol>
     <br />
     <CodeEditor
       font_size="16px"
@@ -101,8 +101,8 @@
       :languages="[['javascript', 'JS']]"
     />
     <br />
-    <!-- DragerRow -->
-    <DragerRow
+    <!-- DragRow -->
+    <DragRow
       class="example_2"
       @isDragging="isDragging"
       @dragging="draggingRow"
@@ -116,7 +116,7 @@
         <!-- your content -->
         {{ data_2_1 }}
       </template>
-    </DragerRow>
+    </DragRow>
     <br />
     <CodeEditor
       font_size="16px"
@@ -220,28 +220,28 @@
     <!-- Nesting -->
     <h2>Nesting</h2>
     <Resize :width="320">
-      <DragerRow height="100%" width="100%">
+      <DragRow height="100%" width="100%">
         <template #top>
-          <DragerCol height="100%" width="100%" :leftPercent="30">
+          <DragCol height="100%" width="100%" :leftPercent="30">
             <template #left>
               <!-- your content -->
             </template>
             <template #right>
               <!-- your content -->
             </template>
-          </DragerCol>
+          </DragCol>
         </template>
         <template #bottom>
-          <DragerCol height="100%" width="100%" :leftPercent="70">
+          <DragCol height="100%" width="100%" :leftPercent="70">
             <template #left>
               <!-- your content -->
             </template>
             <template #right>
               <!-- your content -->
             </template>
-          </DragerCol>
+          </DragCol>
         </template>
-      </DragerRow>
+      </DragRow>
     </Resize>
     <br />
     <CodeEditor
@@ -290,8 +290,8 @@
 import hljs from "highlight.js";
 import CodeEditor from "simple-code-editor";
 import {
-  DragerCol,
-  DragerRow,
+  DragCol,
+  DragRow,
   ResizeCol,
   ResizeRow,
   Resize,
@@ -299,8 +299,8 @@ import {
 
 export default {
   components: {
-    DragerCol,
-    DragerRow,
+    DragCol,
+    DragRow,
     ResizeCol,
     ResizeRow,
     Resize,
@@ -309,21 +309,21 @@ export default {
   data() {
     return {
       example: `import {
-  DragerCol,
-  DragerRow,
+  DragCol,
+  DragRow,
   ResizeCol,
   ResizeRow,
   Resize,
 } from "vue-resizer";`,
       example_1: `<!-- Usage -->
-<DragerCol>
+<DragCol>
   <template #left>
     <!-- your content -->
   </template>
   <template #right>
     <!-- your content -->
   </template>
-</DragerCol>`,
+</DragCol>`,
       example_1_1: `// Props
 props: {
   // width percentage of the left part
@@ -367,14 +367,14 @@ props: {
   }
 }
 `,
-      example_2: `<DragerRow>
+      example_2: `<DragRow>
   <template #top>
     <!-- your content -->
   </template>
   <template #bottom>
     <!-- your content -->
   </template>
-</DragerRow>`,
+</DragRow>`,
       example_2_1: `props: {
   // height percentage of the top part
   // units: %
@@ -531,28 +531,28 @@ props: {
     }
   },`,
       example_6: `<Resize>
-  <DragerRow height="100%" width="100%">
+  <DragRow height="100%" width="100%">
     <template #top>
-      <DragerCol height="100%" width="100%" :leftPercent="30">
+      <DragCol height="100%" width="100%" :leftPercent="30">
         <template #left>
           <!-- your content -->
         </template>
         <template #right>
           <!-- your content -->
         </template>
-      </DragerCol>
+      </DragCol>
     </template>
     <template #bottom>
-      <DragerCol height="100%" width="100%" :leftPercent="70">
+      <DragCol height="100%" width="100%" :leftPercent="70">
         <template #left>
           <!-- your content -->
         </template>
         <template #right>
           <!-- your content -->
         </template>
-      </DragerCol>
+      </DragCol>
     </template>
-  </DragerRow>
+  </DragRow>
 </Resize>`,
       install: `npm install vue-resizer`,
       // show datd
@@ -567,7 +567,7 @@ props: {
       // Real-time State and Data
       example_7: `<!-- Open the Console of the browser and drag any slider in the above examples, you will see the real-time states -->
 
-<DragerCol
+<DragCol
   @isDragging="func"
   @dragging="func"
 />
@@ -576,7 +576,7 @@ props: {
 
 @dragging will be activated while you keep dragging, it will pass a number parameter which is the percentage of the left part 
 -->
-<DragerRow
+<DragRow
   @isDragging="func"
   @dragging="func"
 />
