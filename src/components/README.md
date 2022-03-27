@@ -3,6 +3,7 @@ A series of the resizer components for Vue.js
 
 ### [For all the usages please check the website](https://vue-resizer.vicuxd.com/) 
 
+<br/>
 
 Install with NPM
 
