@@ -1,6 +1,6 @@
 {
   "name": "vue-resizer",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A series of the resizer components for Vue.js",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justcaliturner/vue-resizer.git"
+    "url": "git+git@github.com:justcaliturner/vue-resizer.git"
   },
   "keywords": [
     "vue-resizer",
+    "resizers",
     "resizer",
     "resize",
     "slider",
