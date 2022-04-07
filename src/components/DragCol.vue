@@ -162,7 +162,6 @@ export default {
   height: 100%;
 }
 .drager_left {
-  background: #2d4252;
   padding-right: 10px;
 }
 .drager_left > div {
@@ -170,7 +169,6 @@ export default {
   overflow: hidden;
 }
 .drager_right {
-  background: #4d6170;
   padding-left: 10px;
 }
 .drager_right > div {

@@ -166,7 +166,6 @@ export default {
   width: 100%;
 }
 .drager_top {
-  background: #2d4252;
   padding-bottom: 10px;
 }
 .drager_top > div {
@@ -174,7 +173,6 @@ export default {
   overflow: hidden;
 }
 .drager_bottom {
-  background: #4d6170;
   padding-top: 10px;
 }
 .drager_bottom > div {

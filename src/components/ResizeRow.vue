@@ -134,7 +134,6 @@ export default {
 </script>
 <style>
 .resize_row {
-  background: #4d6170;
   overflow: hidden;
   box-sizing: border-box;
   padding-bottom: 20px;

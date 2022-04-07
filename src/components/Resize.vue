@@ -214,7 +214,6 @@ export default {
 <style>
 .resize {
   position: relative;
-  background: #4d6170;
   overflow: hidden;
   box-sizing: border-box;
   padding: 0 20px 20px 0;
@@ -274,7 +273,7 @@ export default {
 }
 .resize > .slider_col:hover,
 .resize > .slider_col:active {
-  background: #16222a;
+  background: v-bind("sliderBgHoverColor");
 }
 .resize > .slider_row:before {
   transition: background-color 0.2s;

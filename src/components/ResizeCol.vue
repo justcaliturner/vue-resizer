@@ -125,7 +125,6 @@ export default {
 <style>
 .resize_col {
   position: relative;
-  background: #4d6170;
   overflow: hidden;
   box-sizing: border-box;
   padding-right: 20px;

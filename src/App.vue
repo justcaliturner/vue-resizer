@@ -755,7 +755,19 @@ p {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.drager_left {
+  background: #2d4252;
+}
+.drager_right {
+  background: #4d6170;
+}
 /* example_2 */
+.drager_top {
+  background: #2d4252;
+}
+.drager_bottom {
+  background: #4d6170;
+}
 .example_2 .drager_top {
   overflow: hidden;
   position: relative;
@@ -785,6 +797,9 @@ p {
   transform: translate(-50%, -50%);
 }
 /* example_3 */
+.resize_col {
+  background: #4d6170;
+}
 .example_3 .resize_col {
   overflow: hidden;
 }
@@ -800,6 +815,9 @@ p {
   transform: translate(-50%, -50%);
 }
 /* example_4 */
+.resize_row {
+  background: #4d6170;
+}
 .example_4 .resize_row {
   overflow: hidden;
 }
@@ -815,6 +833,9 @@ p {
   transform: translate(-50%, -50%);
 }
 /* example_5 */
+.resize {
+  background: #4d6170;
+}
 .example_5 .resize {
   overflow: hidden;
 }
