@@ -278,7 +278,9 @@ export default {
   background-color: v-bind("sliderColor");
 }
 .resize > .slider_col:hover:before,
-.resize > .slider_col:hover:after {
+.resize > .slider_col:hover:after,
+.resize > .slider_col:active:before,
+.resize > .slider_col:active:after {
   background-color: v-bind("sliderHoverColor");
 }
 .resize > .slider_col:hover,
@@ -314,7 +316,9 @@ export default {
   background-color: v-bind("sliderColor");
 }
 .resize > .slider_row:hover:before,
-.resize > .slider_row:hover:after {
+.resize > .slider_row:hover:after,
+.resize > .slider_row:active:before,
+.resize > .slider_row:active:after {
   background-color: v-bind("sliderHoverColor");
 }
 .resize > .slider_row:hover,

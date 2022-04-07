@@ -219,7 +219,9 @@ export default {
   background-color: v-bind("sliderColor");
 }
 .drager_row > .slider_row:hover:before,
-.drager_row > .slider_row:hover:after {
+.drager_row > .slider_row:hover:after,
+.drager_row > .slider_row:active:before,
+.drager_row > .slider_row:active:after {
   background-color: v-bind("sliderHoverColor");
 }
 .drager_row > .slider_row:hover,

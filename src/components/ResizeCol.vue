@@ -179,7 +179,9 @@ export default {
   background-color: v-bind("sliderColor");
 }
 .resize_col > .slider_col:hover:before,
-.resize_col > .slider_col:hover:after {
+.resize_col > .slider_col:hover:after,
+.resize_col > .slider_col:active:before,
+.resize_col > .slider_col:active:after {
   background-color: v-bind("sliderHoverColor");
 }
 .resize_col > .slider_col:hover,
