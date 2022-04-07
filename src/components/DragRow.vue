@@ -54,6 +54,10 @@ export default {
       type: String,
       default: "#1f2e3a",
     },
+    sliderHoverColor: {
+      type: String,
+      default: "#6f808d",
+    },
     sliderBgHoverColor: {
       type: String,
       default: "#16222a",
@@ -180,6 +184,7 @@ export default {
   overflow: hidden;
 }
 .drager_row > .slider_row {
+  transition: background 0.2s;
   position: relative;
   z-index: 1;
   cursor: row-resize;
@@ -212,6 +217,10 @@ export default {
   min-width: 30px;
   max-width: 70px;
   background-color: v-bind("sliderColor");
+}
+.drager_row > .slider_row:hover:before,
+.drager_row > .slider_row:hover:after {
+  background-color: v-bind("sliderHoverColor");
 }
 .drager_row > .slider_row:hover,
 .drager_row > .slider_row:active {

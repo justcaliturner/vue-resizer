@@ -360,6 +360,11 @@ props: {
     type: String,
     default: "#1f2e3a",
   },
+  // color of the slider on hover
+  sliderHoverColor: {
+    type: String,
+    default: "#6f808d",
+  },
   // bg color of the slider on hover
   sliderBgHoverColor: {
     type: String,
@@ -410,6 +415,11 @@ props: {
     type: String,
     default: "#1f2e3a",
   },
+  // color of the slider on hover
+  sliderHoverColor: {
+    type: String,
+    default: "#6f808d",
+  },
   // bg color of the slider on hover
   sliderBgHoverColor: {
     type: String,
@@ -447,6 +457,11 @@ props: {
   sliderBgColor: {
     type: String,
     default: "#1f2e3a",
+  },
+  // color of the slider on hover
+  sliderHoverColor: {
+    type: String,
+    default: "#6f808d",
   },
   // bg color of the slider on hover
   sliderBgHoverColor: {
@@ -486,6 +501,11 @@ props: {
     type: String,
     default: "#1f2e3a",
   },
+  // color of the slider on hover
+  sliderHoverColor: {
+    type: String,
+    default: "#6f808d",
+  },
   // bg color of the slider on hover
   sliderBgHoverColor: {
     type: String,
@@ -496,40 +516,45 @@ props: {
     <!-- your content -->
 </Resize>`,
       example_5_1: `props: {
-    // width of the slider
-    // units: px
-    sliderWidth: {
-      type: Number,
-      default: 20,
-    },
-    // height of the container
-    // units: px
-    height: {
-      type: Number,
-      default: 400,
-    },
-    // width of the container
-    // units: px
-    width: {
-      type: Number,
-      default: 400,
-    },
-    // color of the slider
-    sliderColor: {
-      type: String,
-      default: "#6f808d",
-    },
-    // bg color of the slider
-    sliderBgColor: {
-      type: String,
-      default: "#1f2e3a",
-    },
-    // bg color of the slider on hover
-    sliderBgHoverColor: {
-      type: String,
-      default: "#16222a",
-    }
-  },`,
+  // width of the slider
+  // units: px
+  sliderWidth: {
+    type: Number,
+    default: 20,
+  },
+  // height of the container
+  // units: px
+  height: {
+    type: Number,
+    default: 400,
+  },
+  // width of the container
+  // units: px
+  width: {
+    type: Number,
+    default: 400,
+  },
+  // color of the slider
+  sliderColor: {
+    type: String,
+    default: "#6f808d",
+  },
+  // bg color of the slider
+  sliderBgColor: {
+    type: String,
+    default: "#1f2e3a",
+  },
+  // color of the slider on hover
+  sliderHoverColor: {
+    type: String,
+    default: "#6f808d",
+  },
+  // bg color of the slider on hover
+  sliderBgHoverColor: {
+    type: String,
+    default: "#16222a",
+  }
+},`,
       example_6: `<Resize>
   <DragRow height="100%" width="100%">
     <template #top>

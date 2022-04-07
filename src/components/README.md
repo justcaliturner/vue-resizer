@@ -72,6 +72,11 @@ props: {
     type: String,
     default: "#1f2e3a",
   },
+  // color of the slider on hover
+  sliderHoverColor: {
+    type: String,
+    default: "#6f808d",
+  },
   // bg color of the slider on hover
   sliderBgHoverColor: {
     type: String,

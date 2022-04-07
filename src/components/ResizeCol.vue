@@ -37,6 +37,10 @@ export default {
       type: String,
       default: "#1f2e3a",
     },
+    sliderHoverColor: {
+      type: String,
+      default: "#6f808d",
+    },
     sliderBgHoverColor: {
       type: String,
       default: "#16222a",
@@ -137,6 +141,7 @@ export default {
   height: 100%;
 }
 .resize_col > .slider_col {
+  transition: background 0.2s;
   position: absolute;
   right: 0;
   top: 0;
@@ -172,6 +177,10 @@ export default {
   min-height: 30px;
   max-height: 70px;
   background-color: v-bind("sliderColor");
+}
+.resize_col > .slider_col:hover:before,
+.resize_col > .slider_col:hover:after {
+  background-color: v-bind("sliderHoverColor");
 }
 .resize_col > .slider_col:hover,
 .resize_col > .slider_col:active {
