@@ -4,6 +4,8 @@
     :style="{
       height: reHeight + 'px',
       width: width,
+      maxHeight: maxHeight + 'px',
+      minHeight: minHeight + 'px'
     }"
   >
     <div class="resize_row_body">
@@ -30,6 +32,14 @@ export default {
     height: {
       type: Number,
       default: 400,
+    },
+    maxHeight: {
+      type: Number,
+      default: 600,
+    },
+    minHeight: {
+      type: Number,
+      default: 250,
     },
     width: {
       type: String,
