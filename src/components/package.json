@@ -1,6 +1,6 @@
 {
   "name": "noruka-vue-resizer",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A series of the resizer components for Vue.js",
   "main": "index.js",
   "scripts": {
