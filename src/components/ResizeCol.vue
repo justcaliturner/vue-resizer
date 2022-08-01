@@ -14,6 +14,7 @@
       @mousedown="resizeCol"
       :style="{
         width: sliderWidth + 'px',
+        zIndex: 999999
       }"
     ></div>
   </div>

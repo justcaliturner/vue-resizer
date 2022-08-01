@@ -17,6 +17,7 @@
       @mousedown="resizeRow"
       :style="{
         height: sliderWidth + 'px',
+        zIndex: 999999
       }"
     ></div>
   </div>
