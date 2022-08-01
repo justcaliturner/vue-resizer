@@ -4,6 +4,8 @@
     :style="{
       height: reHeight + 'px',
       width: width,
+      maxHeight: maxHeight + 'px',
+      minHeight: minHeight + 'px'
     }"
   >
     <div class="resize_row_body">
@@ -15,6 +17,7 @@
       @mousedown="resizeRow"
       :style="{
         height: sliderWidth + 'px',
+        zIndex: 999999
       }"
     ></div>
   </div>
@@ -30,6 +33,12 @@ export default {
     height: {
       type: Number,
       default: 400,
+    },
+    maxHeight: {
+      type: Number
+    },
+    minHeight: {
+      type: Number
     },
     width: {
       type: String,
@@ -55,6 +64,8 @@ export default {
   data() {
     return {
       reHeight: this.height,
+      reMax: this.maxHeight,
+      reMin: this.minHeight,
       isDragging: false,
     };
   },
@@ -81,11 +92,7 @@ export default {
         newPos = e.changedTouches[0].clientY;
         const movingDistance = oldPos - newPos;
         newHeight = parseInt(oldHeight - movingDistance);
-        if (newHeight <= 20) {
-          vue.reHeight = 20;
-        } else {
-          vue.reHeight = newHeight;
-        };
+        vue.reHeight = vue.checkMaxMinLength(newHeight);
         vue.$emit("dragging", vue.reHeight);
       }
       function cancelSliderDrag() {
@@ -119,11 +126,7 @@ export default {
         newPos = e.clientY;
         const movingDistance = oldPos - newPos;
         newHeight = parseInt(oldHeight - movingDistance);
-        if (newHeight <= 20) {
-          vue.reHeight = 20;
-        } else {
-          vue.reHeight = newHeight;
-        };
+        vue.reHeight = vue.checkMaxMinLength(newHeight);
         vue.$emit("dragging", vue.reHeight);
       }
       function cancelSliderDrag() {
@@ -133,6 +136,16 @@ export default {
         document.onmousemove = null;
       }
     },
+    checkMaxMinLength(newValue) {
+      const vue = this
+      if (vue.reMin && vue.reMin >= newValue) {
+        newValue = vue.reMin
+      }
+      if (vue.reMax && vue.reMax <= newValue) {
+        newValue = vue.reMax
+      }
+      return newValue
+    }
   },
 };
 </script>

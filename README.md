@@ -8,7 +8,7 @@ A series of the resizer components for Vue.js
 Install with NPM
 
 ```
-npm install vue-resizer
+npm install noruka-vue-resizer
 ```
 
 Import
@@ -20,7 +20,7 @@ import {
   ResizeCol,
   ResizeRow,
   Resize,
-} from "vue-resizer"
+} from "noruka-vue-resizer"
 ```
 Usage
 

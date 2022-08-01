@@ -1,5 +1,10 @@
 <template>
-  <div class="resize_col" :style="{ width: reWidth + 'px', height: height }">
+  <div class="resize_col" :style="{
+    width: reWidth + 'px',
+    maxWidth: reMax + 'px',
+    minWidth: reMin + 'px',
+    height: height
+  }">
     <div class="resize_col_body">
       <slot></slot>
     </div>
@@ -9,6 +14,7 @@
       @mousedown="resizeCol"
       :style="{
         width: sliderWidth + 'px',
+        zIndex: 999999
       }"
     ></div>
   </div>
@@ -24,6 +30,12 @@ export default {
     width: {
       type: Number,
       default: 400,
+    },
+    maxWidth: {
+      type: Number
+    },
+    minWidth: {
+      type: Number
     },
     height: {
       type: String,
@@ -49,6 +61,8 @@ export default {
   data() {
     return {
       reWidth: this.width,
+      reMax: this.maxWidth,
+      reMin: this.minWidth,
       isDragging: false,
     };
   },
@@ -73,11 +87,7 @@ export default {
         newPos = e.changedTouches[0].clientX;
         const movingDistance = oldPos - newPos;
         newWidth = parseInt(oldWidth - movingDistance);
-        if (newWidth <= 20) {
-          vue.reWidth = 20;
-        } else {
-          vue.reWidth = newWidth;
-        };
+        vue.reWidth = vue.checkMaxMinLength(newWidth);
         vue.$emit("dragging", vue.reWidth);
       }
       function cancelSliderDrag() {
@@ -109,11 +119,7 @@ export default {
         newPos = e.clientX;
         const movingDistance = oldPos - newPos;
         newWidth = parseInt(oldWidth - movingDistance);
-        if (newWidth <= 20) {
-          vue.reWidth = 20;
-        } else {
-          vue.reWidth = newWidth;
-        };
+        vue.reWidth = vue.checkMaxMinLength(newWidth);
         vue.$emit("dragging", vue.reWidth);
       }
       function cancelSliderDrag() {
@@ -123,6 +129,16 @@ export default {
         document.onmousemove = null;
       }
     },
+    checkMaxMinLength(newValue) {
+      const vue = this
+      if (vue.reMin && vue.reMin >= newValue) {
+        newValue = vue.reMin
+      }
+      if (vue.reMax && vue.reMax <= newValue) {
+        newValue = vue.reMax
+      }
+      return newValue
+    }
   },
 };
 </script>

@@ -140,6 +140,8 @@
       class="example_3"
       @isDragging="isDragging"
       @dragging="resizingCol"
+      :max-width="500"
+      :min-width="100"
     >
       <!-- your content -->
       {{ data_3 }}
@@ -167,6 +169,8 @@
       class="example_4"
       @isDragging="isDragging"
       @dragging="resizingRow"
+      :max-height="500"
+      :min-height="100"
     >
       <!-- your content -->
       {{ data_4 }}
@@ -328,7 +332,7 @@ export default {
 props: {
   // width percentage of the left part
   // units: %
-  leftPercent: { 
+  leftPercent: {
     type: Number,
     default: 50,
   },
@@ -599,7 +603,7 @@ props: {
 <!--
 @isDragging will be activated while you start or stop dragging, it will pass a boolean parameter which is the state of dragging
 
-@dragging will be activated while you keep dragging, it will pass a number parameter which is the percentage of the left part 
+@dragging will be activated while you keep dragging, it will pass a number parameter which is the percentage of the left part
 -->
 <DragRow
   @isDragging="func"
@@ -634,7 +638,7 @@ props: {
   @draggingRow="func"
   @draggingCol="func"
 />
-<!-- 
+<!--
 @isDraggingRow will be activated while you start or stop vertical dragging, it will pass a boolean parameter which is the state of vertical dragging
 
 @isDraggingCol will be activated while you start or stop horizontal dragging, it will pass a boolean parameter which is the state of horizontal dragging
