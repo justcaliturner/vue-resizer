@@ -4,6 +4,8 @@
     :style="{
       height: reHeight + 'px',
       width: width,
+      maxHeight: maxHeight + 'px',
+      minHeight: minHeight + 'px'
     }"
   >
     <div class="resize_row_body">
@@ -20,8 +22,11 @@
   </div>
 </template>
 <script>
+import CommonMethodsMixin from '/src/mixins/commonMethods'
+
 export default {
   name: "ResizeRow",
+  mixins: [ CommonMethodsMixin ],
   props: {
     sliderWidth: {
       type: Number,
@@ -30,6 +35,12 @@ export default {
     height: {
       type: Number,
       default: 400,
+    },
+    maxHeight: {
+      type: Number
+    },
+    minHeight: {
+      type: Number
     },
     width: {
       type: String,
@@ -55,6 +66,8 @@ export default {
   data() {
     return {
       reHeight: this.height,
+      reMax: this.maxHeight,
+      reMin: this.minHeight,
       isDragging: false,
     };
   },
@@ -81,11 +94,7 @@ export default {
         newPos = e.changedTouches[0].clientY;
         const movingDistance = oldPos - newPos;
         newHeight = parseInt(oldHeight - movingDistance);
-        if (newHeight <= 20) {
-          vue.reHeight = 20;
-        } else {
-          vue.reHeight = newHeight;
-        };
+        vue.reHeight = vue.checkMaxMinLength(newHeight);
         vue.$emit("dragging", vue.reHeight);
       }
       function cancelSliderDrag() {
@@ -119,11 +128,7 @@ export default {
         newPos = e.clientY;
         const movingDistance = oldPos - newPos;
         newHeight = parseInt(oldHeight - movingDistance);
-        if (newHeight <= 20) {
-          vue.reHeight = 20;
-        } else {
-          vue.reHeight = newHeight;
-        };
+        vue.reHeight = vue.checkMaxMinLength(newHeight);
         vue.$emit("dragging", vue.reHeight);
       }
       function cancelSliderDrag() {
@@ -132,7 +137,7 @@ export default {
         document.onmouseup = null;
         document.onmousemove = null;
       }
-    },
+    }
   },
 };
 </script>
