@@ -1,6 +1,6 @@
 {
-  "name": "vue-resizer",
-  "version": "1.1.9",
+  "name": "noruka-vue-resizer",
+  "version": "1.2.1",
   "description": "A series of the resizer components for Vue.js",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:justcaliturner/vue-resizer.git"
+    "url": "git+git@github.com:noruka/vue-resizer.git"
   },
   "keywords": [
     "vue-resizer",
@@ -20,7 +20,7 @@
     "dragging",
     "vue"
   ],
-  "author": "Vic",
+  "author": "Vic, Noruka",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/justcaliturner/vue-resizer/issues"

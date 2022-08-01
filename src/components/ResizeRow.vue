@@ -22,11 +22,8 @@
   </div>
 </template>
 <script>
-import CommonMethodsMixin from '/src/mixins/commonMethods'
-
 export default {
   name: "ResizeRow",
-  mixins: [ CommonMethodsMixin ],
   props: {
     sliderWidth: {
       type: Number,
@@ -137,6 +134,16 @@ export default {
         document.onmouseup = null;
         document.onmousemove = null;
       }
+    },
+    checkMaxMinLength(newValue) {
+      const vue = this
+      if (vue.reMin && vue.reMin >= newValue) {
+        newValue = vue.reMin
+      }
+      if (vue.reMax && vue.reMax <= newValue) {
+        newValue = vue.reMax
+      }
+      return newValue
     }
   },
 };

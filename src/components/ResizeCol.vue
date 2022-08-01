@@ -19,11 +19,8 @@
   </div>
 </template>
 <script>
-import CommonMethodsMixin from "../mixins/commonMethods";
-
 export default {
   name: "ResizeCol",
-  mixins: [ CommonMethodsMixin ],
   props: {
     sliderWidth: {
       type: Number,
@@ -131,6 +128,16 @@ export default {
         document.onmousemove = null;
       }
     },
+    checkMaxMinLength(newValue) {
+      const vue = this
+      if (vue.reMin && vue.reMin >= newValue) {
+        newValue = vue.reMin
+      }
+      if (vue.reMax && vue.reMax <= newValue) {
+        newValue = vue.reMax
+      }
+      return newValue
+    }
   },
 };
 </script>
