@@ -28,7 +28,7 @@ declare module 'launch-editor-middleware' {
 }
 
 declare module 'postcss-load-config' {
-  import type { ProcessOptions, Plugin } from 'postcss'
+  import type { Plugin, ProcessOptions } from 'postcss'
   function load(
     inline: any,
     root: string
@@ -91,11 +91,6 @@ declare module 'micromatch' {
     pattern: string,
     options?: { matchBase?: boolean }
   ): boolean
-}
-
-declare module 'compression' {
-  function compression(): any
-  export default compression
 }
 
 // LESS' types somewhat references this which doesn't make sense in Node,

@@ -220,7 +220,7 @@ function java(hljs) {
           /\s+/,
           JAVA_IDENT_RE,
           /\s+/,
-          /=/
+          /=(?!=)/
         ],
         className: {
           1: "type",

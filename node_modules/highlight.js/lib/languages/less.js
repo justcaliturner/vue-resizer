@@ -681,7 +681,9 @@ function less(hljs) {
       returnBegin: true,
       excludeEnd: true
     },
-    modes.IMPORTANT
+    modes.IMPORTANT,
+    { beginKeywords: 'and not' },
+    modes.FUNCTION_DISPATCH
   );
 
   const VALUE_WITH_RULESETS = VALUE_MODES.concat({
@@ -777,6 +779,7 @@ function less(hljs) {
       MIXIN_GUARD_MODE,
       IDENT_MODE('keyword', 'all\\b'),
       IDENT_MODE('variable', '@\\{' + IDENT_RE + '\\}'), // otherwise it’s identified as tag
+      
       {
         begin: '\\b(' + TAGS.join('|') + ')\\b',
         className: 'selector-tag'
@@ -819,7 +822,9 @@ function less(hljs) {
     VAR_RULE_MODE,
     PSEUDO_SELECTOR_MODE,
     RULE_MODE,
-    SELECTOR_MODE
+    SELECTOR_MODE,
+    MIXIN_GUARD_MODE,
+    modes.FUNCTION_DISPATCH
   );
 
   return {

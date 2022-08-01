@@ -672,6 +672,7 @@ function scss(hljs) {
       {
         begin: /:/,
         end: /[;}{]/,
+        relevance: 0,
         contains: [
           modes.BLOCK_COMMENT,
           VARIABLE,
@@ -679,7 +680,8 @@ function scss(hljs) {
           modes.CSS_NUMBER_MODE,
           hljs.QUOTE_STRING_MODE,
           hljs.APOS_STRING_MODE,
-          modes.IMPORTANT
+          modes.IMPORTANT,
+          modes.FUNCTION_DISPATCH
         ]
       },
       // matching these here allows us to treat them more like regular CSS

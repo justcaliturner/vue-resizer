@@ -127,7 +127,7 @@ function rust(hljs) {
     "file!",
     "format!",
     "format_args!",
-    "include_bin!",
+    "include_bytes!",
     "include_str!",
     "line!",
     "local_data_key!",
@@ -288,7 +288,8 @@ function rust(hljs) {
         begin: hljs.IDENT_RE + '::',
         keywords: {
           keyword: "Self",
-          built_in: BUILTINS
+          built_in: BUILTINS,
+          type: TYPES
         }
       },
       {
