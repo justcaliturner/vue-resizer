@@ -1,18 +1,29 @@
 {
   "name": "noruka-vue-resizer",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.2.4",
+  "description": "A fork series of the resizer components for Vue.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "simple-code-editor": "^1.2.2",
-    "vue": "^3.2.25"
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:noruka/vue-resizer.git"
   },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^2.2.0",
-    "vite": "^2.8.0"
-  }
+  "keywords": [
+    "vue-resizer",
+    "resizers",
+    "resizer",
+    "resize",
+    "slider",
+    "drag",
+    "dragging",
+    "vue"
+  ],
+  "author": "Vic, Noruka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Noruka/vue-resizer/issues"
+  },
+  "homepage": "https://vue-resizer.vicuxd.com"
 }

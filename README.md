@@ -81,6 +81,19 @@ props: {
   sliderBgHoverColor: {
     type: String,
     default: "#16222a",
+  },
+  // Prop for zIndex for the slider
+  sliderZIndex: {
+    type: Number,
+    default: 100,
+  },
+  // Max Values for Width and Height (ResizeCol and ResizeRow)
+  maxWidth: {
+    type: Number
+  },
+  // Min Values for Width and Height (ResizeCol and ResizeRow)
+  minWidth: {
+    type: Number
   }
 }
 ```
