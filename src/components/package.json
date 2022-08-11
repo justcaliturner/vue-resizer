@@ -1,7 +1,7 @@
 {
   "name": "noruka-vue-resizer",
-  "version": "1.2.3",
-  "description": "A series of the resizer components for Vue.js",
+  "version": "1.2.4",
+  "description": "A fork series of the resizer components for Vue.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,7 @@
   "author": "Vic, Noruka",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/justcaliturner/vue-resizer/issues"
+    "url": "https://github.com/Noruka/vue-resizer/issues"
   },
   "homepage": "https://vue-resizer.vicuxd.com"
 }
