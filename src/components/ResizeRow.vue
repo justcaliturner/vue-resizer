@@ -17,7 +17,7 @@
       @mousedown="resizeRow"
       :style="{
         height: sliderWidth + 'px',
-        zIndex: 999999
+        zIndex: sliderZIndex
       }"
     ></div>
   </div>
@@ -29,6 +29,10 @@ export default {
     sliderWidth: {
       type: Number,
       default: 20,
+    },
+    sliderZIndex: {
+      type: Number,
+      default: 100,
     },
     height: {
       type: Number,

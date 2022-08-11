@@ -14,7 +14,7 @@
       @mousedown="resizeCol"
       :style="{
         width: sliderWidth + 'px',
-        zIndex: 999999
+        zIndex: sliderZIndex
       }"
     ></div>
   </div>
@@ -26,6 +26,10 @@ export default {
     sliderWidth: {
       type: Number,
       default: 20,
+    },
+    sliderZIndex: {
+      type: Number,
+      default: 100,
     },
     width: {
       type: Number,
