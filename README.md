@@ -38,6 +38,25 @@ Usage
 Props
 ```js
 props: {
+  // DragCol additional classes
+  draggerRightClasses: {
+    default: undefined
+  },
+  draggerLeftClasses: {
+    default: undefined
+  },
+  // DragRow additional classes
+  draggerTopClasses: {
+    default: undefined
+  },
+  draggerBottomClasses: {
+    default: undefined
+  },
+  // DragCol & DragRow additional classes
+  sliderClasses: {
+    default: undefined
+  },
+  
   // width percentage of the left part
   // units: %
   leftPercent: { 

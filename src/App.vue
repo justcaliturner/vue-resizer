@@ -72,6 +72,9 @@
       class="example_1"
       @isDragging="isDragging"
       @dragging="draggingCol"
+      :draggerRightClasses="{ 'additional': enableAdditionalDragColClasses }"
+      :draggerLeftClasses="{ 'additional': enableAdditionalDragColClasses }"
+      :sliderClasses="{ 'additional': enableAdditionalDragColClasses }"
       width="100%"
     >
       <template #left>
@@ -83,6 +86,12 @@
         {{ data_1_1 }}
       </template>
     </DragCol>
+    <p>
+      <input id="addClasses" type="checkbox" v-model="enableAdditionalDragColClasses" />
+      <label for="addClasses">
+        Enable additional classes
+      </label>
+    </p>
     <br />
     <CodeEditor
       font_size="16px"
@@ -107,6 +116,10 @@
       @isDragging="isDragging"
       @dragging="draggingRow"
       width="100%"
+      :draggerTopClasses="{ 'additional': enableAdditionalDragRowClasses }"
+      :draggerBottomClasses="{ 'additional': enableAdditionalDragRowClasses }"
+      :sliderClasses="{ 'additional': enableAdditionalDragRowClasses }"
+     
     >
       <template #top>
         <!-- your content -->
@@ -117,6 +130,12 @@
         {{ data_2_1 }}
       </template>
     </DragRow>
+    <p>
+      <input id="addRowClasses" type="checkbox" v-model="enableAdditionalDragRowClasses" />
+      <label for="addRowClasses">
+        Enable additional classes
+      </label>
+    </p>
     <br />
     <CodeEditor
       font_size="16px"
@@ -308,6 +327,8 @@ export default {
   },
   data() {
     return {
+      enableAdditionalDragColClasses: false,
+      enableAdditionalDragRowClasses: false,
       example: `import {
   DragCol,
   DragRow,
@@ -323,9 +344,20 @@ export default {
   <template #right>
     <!-- your content -->
   </template>
-</DragCol>`,
+</DragCol>
+`,
       example_1_1: `// Props
 props: {
+  // Additional classes that will be attached to matching elements
+  draggerRightClasses: {
+    default: undefined
+  },
+  draggerLeftClasses: {
+    default: undefined
+  },
+  sliderClasses: {
+    default: undefined
+  },
   // width percentage of the left part
   // units: %
   leftPercent: { 
@@ -752,6 +784,18 @@ p {
   border-radius: 0;
 }
 /* example_1 */
+
+.example_1 .drager_left.additional {
+  background: red;
+}
+.example_1 .slider_col.additional {
+  background: blue;
+}
+
+.example_1 .drager_right.additional {
+  background: green;
+}
+
 .example_1 .drager_left {
   overflow: hidden;
   position: relative;
@@ -787,6 +831,18 @@ p {
   background: #4d6170;
 }
 /* example_2 */
+
+.example_2 .drager_top.additional {
+  background: red;
+}
+.example_2 .slider_row.additional {
+  background: blue;
+}
+
+.example_2 .drager_bottom.additional {
+  background: green;
+}
+
 .drager_top {
   background: #2d4252;
 }
