@@ -4,7 +4,7 @@
     ref="container"
     :style="{ width: width, height: height }"
   >
-    <div class="drager_left" :style="{ width: left + '%' }">
+    <div class="drager_left" :class="draggerLeftClasses" :style="{ width: left + '%' }">
       <div>
         <slot name="left"></slot>
       </div>
@@ -18,8 +18,9 @@
         marginLeft: -sliderWidth / 2 + 'px',
         marginRight: -sliderWidth / 2 + 'px',
       }"
+      :class="sliderClasses"
     ></div>
-    <div class="drager_right" :style="{ width: 100 - left + '%' }">
+    <div class="drager_right" :class="draggerRightClasses" :style="{ width: 100 - left + '%' }">
       <div>
         <slot name="right"></slot>
       </div>
@@ -30,6 +31,15 @@
 export default {
   name: "DragCol",
   props: {
+    draggerRightClasses: {
+      default: undefined
+    },
+    draggerLeftClasses: {
+      default: undefined
+    },
+    sliderClasses: {
+      default: undefined
+    },
     leftPercent: {
       type: Number,
       default: 50,

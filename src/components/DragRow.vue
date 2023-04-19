@@ -4,7 +4,7 @@
     ref="container"
     :style="{ width: width, height: height }"
   >
-    <div class="drager_top" :style="{ height: top + '%' }">
+    <div class="drager_top" :class="draggerTopClasses" :style="{ height: top + '%' }">
       <div>
         <slot name="top"></slot>
       </div>
@@ -13,13 +13,14 @@
       class="slider_row"
       @touchstart.passive="mobileDragRow"
       @mousedown="dragRow"
+      :class="sliderClasses"
       :style="{
         height: sliderWidth + 'px',
         marginTop: -sliderWidth / 2 + 'px',
         marginBottom: -sliderWidth / 2 + 'px',
       }"
     ></div>
-    <div class="drager_bottom" :style="{ height: 100 - top + '%' }">
+    <div class="drager_bottom"  :class="draggerBottomClasses" :style="{ height: 100 - top + '%' }">
       <div>
         <slot name="bottom"></slot>
       </div>
@@ -30,6 +31,15 @@
 export default {
   name: "DragRow",
   props: {
+    draggerTopClasses: {
+      default: undefined
+    },
+    draggerBottomClasses: {
+      default: undefined
+    },
+    sliderClasses: {
+      default: undefined
+    },
     topPercent: {
       type: Number,
       default: 50,

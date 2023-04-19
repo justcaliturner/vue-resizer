@@ -38,6 +38,22 @@ Usage
 Props
 ```js
 props: {
+  // Additional classes that will be attached to matching elements
+  draggerRightClasses: {
+    default: undefined
+  },
+  draggerLeftClasses: {
+    default: undefined
+  },
+  sliderClasses: {
+    default: undefined
+  },
+  draggerTopClasses: {
+    default: undefined
+  },
+  draggerBottomClasses: {
+    default: undefined
+  },
   // width percentage of the left part
   // units: %
   leftPercent: { 
