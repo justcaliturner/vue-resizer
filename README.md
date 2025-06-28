@@ -1,7 +1,7 @@
 # vue-resizer
 A series of the resizer components for Vue.js
 
-### [For all the usages please check the website](https://vue-resizer.vicuxd.com/) 
+### [For all the usages please check the website](https://vue-resizer.vicless.com/) 
 
 <br/>
 
@@ -85,4 +85,4 @@ props: {
 }
 ```
 
-### [Go to the document](https://vue-resizer.vicuxd.com/) 
+### [Go to the document](https://vue-resizer.vicless.com/) 
