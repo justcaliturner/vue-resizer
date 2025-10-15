@@ -10,6 +10,7 @@
       </div>
     </div>
     <div
+      v-if="enableSlider"
       class="slider_col"
       @touchstart.passive="mobileDragCol"
       @mousedown="dragCol"
@@ -30,6 +31,10 @@
 export default {
   name: "DragCol",
   props: {
+    showSlider: {
+      type: Boolean,
+      default: true,
+    },
     leftPercent: {
       type: Number,
       default: 50,
@@ -65,6 +70,7 @@ export default {
   },
   data() {
     return {
+      enableSlider: this.showSlider,
       left: this.leftPercent,
       isDragging: false,
     };
@@ -151,6 +157,14 @@ export default {
       }
     },
   },
+  watch:{
+    showSlider(newVal){
+        this.enableSlider =newVal;
+    },
+    leftPercent(newVal){
+      this.left = newVal;
+    }
+  }
 };
 </script>
 <style>
